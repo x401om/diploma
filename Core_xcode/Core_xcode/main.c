@@ -9,7 +9,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "game.h"
+#include "C:\Users\Gala Boldyreva\Documents\GitHub\diploma\Core_files\game.h"
 
 // some constants for game initializaton
 #define kStabilityAmount (int)3
@@ -25,7 +25,7 @@ int main(int argc, const char * argv[]) {
     printf("step number %d\n", step);
     for (int i = 0; i < kNumberOfPlayers; ++i) {
       printf("enter the demand of player #%d\n", i+1);
-      scanf("%lf", &(players[i].demand));
+      scanf_s("%lf", &(players[i].demand));
     }
     for (int i = 0; i < kNumberOfPlayers; ++i) {
       calculateMetrics(players, resource);
