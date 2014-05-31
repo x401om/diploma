@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		74EFAF6E1939CBA4008889E1 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 74EFAF6D1939CBA4008889E1 /* main.c */; };
 		74EFAF701939CBA4008889E1 /* Core_xcode.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 74EFAF6F1939CBA4008889E1 /* Core_xcode.1 */; };
+		74EFAF791939CD55008889E1 /* game.c in Sources */ = {isa = PBXBuildFile; fileRef = 74EFAF781939CD55008889E1 /* game.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,8 @@
 		74EFAF6A1939CBA4008889E1 /* Core_xcode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Core_xcode; sourceTree = BUILT_PRODUCTS_DIR; };
 		74EFAF6D1939CBA4008889E1 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		74EFAF6F1939CBA4008889E1 /* Core_xcode.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Core_xcode.1; sourceTree = "<group>"; };
+		74EFAF771939CBC7008889E1 /* game.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = game.h; path = ../../Core_files/game.h; sourceTree = "<group>"; };
+		74EFAF781939CD55008889E1 /* game.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = game.c; path = ../../Core_files/game.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,10 +63,20 @@
 		74EFAF6C1939CBA4008889E1 /* Core_xcode */ = {
 			isa = PBXGroup;
 			children = (
+				74EFAF761939CBAC008889E1 /* Files */,
 				74EFAF6D1939CBA4008889E1 /* main.c */,
 				74EFAF6F1939CBA4008889E1 /* Core_xcode.1 */,
 			);
 			path = Core_xcode;
+			sourceTree = "<group>";
+		};
+		74EFAF761939CBAC008889E1 /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				74EFAF771939CBC7008889E1 /* game.h */,
+				74EFAF781939CD55008889E1 /* game.c */,
+			);
+			name = Files;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -118,6 +131,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				74EFAF6E1939CBA4008889E1 /* main.c in Sources */,
+				74EFAF791939CD55008889E1 /* game.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

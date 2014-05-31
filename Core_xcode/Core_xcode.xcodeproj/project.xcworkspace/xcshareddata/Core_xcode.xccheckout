@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>25DE5A37-0838-4450-B12D-9890CBE4DF2B</string>
+	<string>9878DEA8-B6CE-44CB-BD40-EB9245473606</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Core_xcode</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -34,7 +34,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>793CC6C0-7F04-4071-8ED0-59ED05765C5D</string>
 			<key>IDESourceControlWCCName</key>
-			<string>diploma</string>
+			<string>Core_xcode</string>
 		</dict>
 	</array>
 </dict>

@@ -7,12 +7,34 @@
 //
 
 #include <stdio.h>
+#include <stdlib.h>
 
-int main(int argc, const char * argv[])
-{
+#include "game.h"
 
-  // insert code here...
-  printf("Hello, World!\n");
-    return 0;
+// some constants for game initializaton
+#define kStabilityAmount (int)3
+#define kNumberOfPlayers (int)3
+
+int main(int argc, const char * argv[]) {
+  double resource = 1000.0;
+  
+  Player *players = (Player *)malloc(kNumberOfPlayers*sizeof(Player));
+  int step = 0;
+  while (1) {
+    step++;
+    printf("step number %d\n", step);
+    for (int i = 0; i < kNumberOfPlayers; ++i) {
+      printf("enter the demand of player #%d\n", i+1);
+      scanf("%lf", &(players[i].demand));
+    }
+    for (int i = 0; i < kNumberOfPlayers; ++i) {
+      calculateMetrics(players, resource);
+      printf("player #\tdemand\tprofit\tutility\n");
+      printf("%d\t%.2lf\t%.2lf\t%.2lf\n\n", i+1, players[i].demand, players[i].profit, players[i].utility);
+    }
+
+  }
+  
+  return 0;
 }
 
