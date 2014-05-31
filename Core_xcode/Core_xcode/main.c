@@ -9,7 +9,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "C:\Users\Gala Boldyreva\Documents\GitHub\diploma\Core_files\game.h"
+#include "game.h"
 
 // some constants for game initializaton
 #define kStabilityAmount (int)3
