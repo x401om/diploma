@@ -66,6 +66,31 @@ def createTableForParticipant(participantNumber):
                                                                  s[indexOfTitle('s[2]')],
                                                                  s[indexOfTitle('s[3]')]))
 
+def createBigTable():
+    fileName = 'game.csv'
+    f = open(fileName, 'w')
+    f.write('#;f1;f2;f3;s11;s12;s13;x1;s21;s22;s23;x2;s31;s32;s33;x3\n')
+    steps = [[]]
+    for i in range(1,4):
+        steps.append(getPeriodsForParticipant(i))
+    for i in range(0, len(steps[1])):
+        s = '{0};{1};{2};{3};{4};{5};{6};{7};{8};{9};{10};{11};{12};{13};{14};{15}\n'.format(i+1,
+                                                                                             steps[1][i][indexOfTitle("Profit")],
+                                                                                             steps[2][i][indexOfTitle("Profit")],
+                                                                                             steps[3][i][indexOfTitle("Profit")],
+                                                                                             steps[1][i][indexOfTitle("s[1]")],
+                                                                                             steps[1][i][indexOfTitle("s[2]")],
+                                                                                             steps[1][i][indexOfTitle("s[3]")],
+                                                                                             steps[1][i][indexOfTitle("x")],
+                                                                                             steps[2][i][indexOfTitle("s[1]")],
+                                                                                             steps[2][i][indexOfTitle("s[2]")],
+                                                                                             steps[2][i][indexOfTitle("s[3]")],
+                                                                                             steps[2][i][indexOfTitle("x")],
+                                                                                             steps[3][i][indexOfTitle("s[1]")],
+                                                                                             steps[3][i][indexOfTitle("s[2]")],
+                                                                                             steps[3][i][indexOfTitle("s[3]")],
+                                                                                             steps[3][i][indexOfTitle("x")])
+        f.write(s)
 
 import matplotlib.pyplot as plt
 
@@ -108,4 +133,5 @@ def drawGraphForKey(key):
 # drawGraphForParticipant(2)
 # drawGraphForParticipant(3)
 
-drawGraphForKey("Profit")
+# drawGraphForKey("Profit")
+createBigTable()
