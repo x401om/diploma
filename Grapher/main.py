@@ -39,7 +39,7 @@ def getPeriodsForParticipant(participantNumber):
     for line in periods:
         if int(line[index]) == participantNumber:
             steps.append(line)
-    return steps
+    return steps[1:]
 
 headerForSteps = 'game;time;subject;group;grSubject;type;profit;penalty;x;s1;s2;s3\n'
 
@@ -69,11 +69,43 @@ def createTableForParticipant(participantNumber):
 
 import matplotlib.pyplot as plt
 
-def draw():
-    x = [1,2,3,4,5,6,7,8]
-    y = [5,2,2,5,6,2,1,5]
-    plt.plot(x,y,'-')
+def drawGraphForParticipant(participantNumber):
+    x = []
+    p = []
+    dots = []
+    for i in range(1,4):
+        steps = getPeriodsForParticipant(i)
+        d = []
+        for line in steps:
+            d.append(line[indexOfTitle('s[{0}]'.format(participantNumber))])
+            if i == 3:
+                p.append(line[indexOfTitle('Period')])
+                x.append(line[indexOfTitle('x')])
+        dots.append(d)
+    plt.plot(p,x,'-')
+    plt.plot(p,dots[0],'r-')
+    plt.plot(p,dots[1], 'g-')
+    plt.plot(p,dots[2], 'y-')
+    plt.title('Player {0}'.format(participantNumber))
     plt.show()
 
-draw()
+def drawGraphForKey(key):
+    colors = ['r-', 'g-','b-']
+    for i in range(1,4):
+        steps = getPeriodsForParticipant(i)
+        x = []
+        y = []
+        for line in steps:
+            x.append(line[indexOfTitle('Period')])
+            y.append(line[indexOfTitle(key)])
+        plt.plot(x, y, colors[i-1])
+    plt.title(key)
+    if key == "Profit":
+        plt.ylim((0,10))
+    plt.show()
 
+# drawGraphForParticipant(1)
+# drawGraphForParticipant(2)
+# drawGraphForParticipant(3)
+
+drawGraphForKey("Profit")
