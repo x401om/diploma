@@ -1,5 +1,5 @@
 def getLines(fileName):
-    with open('data.xls') as f:
+    with open(fileName) as f:
         s = f.read()
     return s.split('\n')
 
